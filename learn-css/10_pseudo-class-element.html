@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Class&Element</title>
+    <style>
+      a {
+        font-size: 30px;
+      }
+      a:link {
+        /*방문하지 않은 사이트 색깔*/
+        color: aqua;
+      }
+      a:visited {
+        /*방문한 사이트 색깔*/
+        color: red;
+      }
+      a:hover {
+        color: blue;
+        font-weight: 900; /*font 굵기*/
+      }
+      fieldset:hover {
+        background-color: lightgrey;
+        box-shadow: 0 0 20px grey; /*번지는 정도 20*/
+      }
+      a:active {
+        /*click 하고 있는 상태*/
+        color: yellow;
+      }
+      .field {
+        margin-bottom: 10px;
+      }
+      input:focus {
+        /*input 칸 눌렀을 때 */
+        outline: none;
+        border: 3px solid violet;
+        box-shadow: 0 0 20px pink;
+      }
+      li:nth-child(1) {
+        background-color: aqua;
+      }
+      li:not(.target) {
+        font-size: 30px;
+      }
+      /*가상 요소*/
+      .required::before {
+        /*앞에 추가*/
+        content: '*';
+        margin-right: 2px;
+        color: red;
+        font-size: 16px;
+      }
+      [data-tooltip] {
+        position: relative; /*버튼이 기준으로 바뀜 */
+      }
+      [data-tooltip]:hover::after/*data-tooltip이라는 속성을 가지고 있는 tag 선택*/ {
+        content: attr(data-tooltip);
+        position: absolute; /*버튼 기준으로 위치 옮기기 가능 & relative 적으면 버튼이 길어짐*/
+        top: 0px;
+        left: 56px;
+        background-color: black;
+        color: white;
+        width: 230px;
+      }
+      .letter::first-letter {
+        font-size: 60px;
+        color: blue;
+      }
+      .line::first-line {
+        background-color: aquamarine;
+        color: blue;
+      }
+      p::selection {
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Pseudo Class</legend>
+      <div>
+        <a href="http://naver.com">네이버</a>
+        <a href="http://kakao.com">카카오</a>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>focus, before, after</legend>
+      <div class="field">
+        <label class="required" for="name">이름</label>
+        <input type="text" id="name" />
+      </div>
+      <div class="field">
+        <label class="required" for="age">나이</label>
+        <input type="text" id="age" />
+      </div>
+      <button data-tooltip="이 버튼을 클릭하여 정보를 보내세요!">보내기</button>
+    </fieldset>
+    <fieldset>
+      <legend>nth-cild, not</legend>
+      <ul>
+        <li class="target">1content</li>
+        <li>2content</li>
+        <li>3content</li>
+        <li>4content</li>
+        <li>5content</li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>first-letter, first-line, section</legend>
+      <div>
+        <p class="letter">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+          fugiat commodi cumque illo quas inventore vitae facilis? Quod illo,
+          perspiciatis quisquam consectetur ex omnis quasi inventore doloribus
+          amet quaerat distinctio. Atque non voluptates nulla, voluptatum
+          aspernatur minus natus debitis laudantium perspiciatis, blanditiis
+          optio iure magni aperiam corporis maxime. Necessitatibus veniam
+          corporis excepturi. Voluptate, possimus adipisci aperiam temporibus
+          voluptates commodi nobis.
+        </p>
+        <p class="line">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
+          repudiandae cupiditate optio voluptatem nobis iste obcaecati pariatur
+          sunt veritatis doloribus, nisi reiciendis doloremque officiis quaerat
+          asperiores expedita ullam exercitationem ipsa. Eveniet deleniti neque
+          aliquam accusamus! Voluptate, deserunt quam commodi aut, ipsum quo eos
+          vero unde iusto voluptatem officia nisi enim tempora voluptatum non
+          blanditiis tenetur repellendus nobis! Voluptatibus, odit facere.
+        </p>
+      </div>
+    </fieldset>
+  </body>
+</html>

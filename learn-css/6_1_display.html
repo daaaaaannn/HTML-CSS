@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display</title>
+    <style>
+      div,
+      h2 {
+        border: 1px solid black;
+        /*  display: none; 아예 보이지 않음 공간 차지 X*/
+        /* visibility: hidden; 보이지 않지만 공간 차지함 */
+      }
+      span,
+      a {
+        border: 1px solid black;
+      }
+      article > span,
+      article > div {
+        /*inline처럼 가로배치 되지만 block처럼 크기 조정 가능*/
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Display Block</h1>
+    <div>content</div>
+    <div>content</div>
+    <div>content</div>
+    <h2>title</h2>
+
+    <h1>Display Inline</h1>
+    <span>content</span>
+    <span>content</span>
+    <span>content</span>
+    <a href="#">naver</a>
+    <article>
+      <h1>Display Inline Block</h1>
+      <!--div는 세로배치, span은 가로배치-->
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <span>content</span>
+      <span>content</span>
+      <span>content</span>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox container</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .flex-container {
+        background-color: yellowgreen;
+        height: 100vh;
+        display: flex; /*상위 요소에 넣어야 함*/
+        /*flex-direction: row;
+        flex-wrap: wrap-reverse; 넘어가는 부분 다음 줄로 넘김*/
+        flex-flow: row wrap;
+        /*justify-content: space-around;*/
+        /*space-around는 균등분할, space-betwwen는 첫,마지막 칸은 끝에 붙히고 균등분할*/
+        /*align-content: space-between;*/
+        align-items: stretch;
+        /*content: space-end하면 전부 다같이 밑으로 감.
+        items: flex-end하면 각각의 기준선의 밑으로 감.*/
+      }
+      .flex-item {
+        color: white;
+        width: 80px;
+        /*height: 80px;*/
+        background-color: violet;
+        text-align: center;
+        border: 1px solid yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">5</div>
+      <div class="flex-item">6</div>
+      <div class="flex-item">7</div>
+      <div class="flex-item">8</div>
+      <div class="flex-item">9</div>
+      <div class="flex-item">10</div>
+      <div class="flex-item">11</div>
+      <div class="flex-item">12</div>
+      <div class="flex-item">13</div>
+      <div class="flex-item">14</div>
+      <div class="flex-item">15</div>
+    </div>
+  </body>
+</html>
